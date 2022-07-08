@@ -8,10 +8,10 @@ def menu():
     print('\nOlá, bem vindo(a) ao Me With Me!\033[1;31m♡\033[0;0m\n'  +
           '\nPor favor, escolha uma das opções abaixo: \n\n'            +
           '\033[1;31m▹\033[0;0m1. Exercìcio para Insegurança.\n'                            +
-          '\033[1;31m▹\033[0;0m2. Exercìcio para Rotulação.\n'                              +
-          '\033[1;31m▹\033[0;0m3. Consulte suas respostas - Insegurança.\n'                 +
-          '\033[1;31m▹\033[0;0m4. Consulte suas respostas - Rotulação.\n'                   +
-          '\033[1;31m▹\033[0;0m5. Excluir exercicio - insegurança.\n'                       +
+          '\033[1;31m▹\033[0;0m2. Consulte suas respostas - Insegurança.\n'                              +
+          '\033[1;31m▹\033[0;0m3. Excluir exercicio - insegurança.\n'                 +
+          '\033[1;31m▹\033[0;0m4. Exercìcio para Rotulação.\n'                   +
+          '\033[1;31m▹\033[0;0m5. Consulte suas respostas - Rotulação.\n'                       +
           '\033[1;31m▹\033[0;0m6. Excluir exercicio - Rotulação.\n'                         +
           '\033[1;31m▹\033[0;0m0. Sair\n')
     this.opcao = int(input())
@@ -49,6 +49,14 @@ def operacao():
             operacoes.inserir1(perg1, perg2, perg3, perg4, perg5)
             operacoes.fim()
         elif this.opcao == 2:
+            operacoes.consultar1()
+            operacoes.fim()
+        elif this.opcao == 3:
+            print("Por favor, informe o código do exercício que deseja excluir:")
+            this.codigo = int(input())
+            operacoes.excluir1(this.codigo)
+            operacoes.fim()
+        elif this.opcao == 4:
             print('\nOlá, bem vindo(a)! \n\n' +
                   'Você fará agora um exercício para te ajudar a duvidar dos seus pensamentos ruins.\n' +
                   ' \n' +
@@ -65,41 +73,34 @@ def operacao():
                   '\n')
             perg6 = input()
             print(
-                '\033[1;34mPergunta 2.\033[0;0m O que significam estas palavras? (Pesquise o significado de cada um dos adjetivos aos quais você se atribuiu.)')
+            '\033[1;34mPergunta 2.\033[0;0m O que significam estas palavras? (Pesquise o significado de cada um dos adjetivos aos quais você se atribuiu.)')
             perg7 = input()
             print(
-                '\033[1;34mPergunta 3.\033[0;0m  Depois desta pesquisa, você realmente acha que se encaixa nestas descrições?')
+            '\033[1;34mPergunta 3.\033[0;0m  Depois desta pesquisa, você realmente acha que se encaixa nestas descrições?')
             perg8 = input()
             print(
-                '\033[1;34mPergunta 4. \033[0;0m Se pergunte: Que prova tenho de que isso é real? (Leve em consideração somente FATOS).')
+            '\033[1;34mPergunta 4. \033[0;0m Se pergunte: Que prova tenho de que isso é real? (Leve em consideração somente FATOS).')
             perg9 = input()
             print(
                 '\033[1;34mPergunta 5.\033[0;0m Por fim, se acolha. Você atribuiria estes adjetivos a um amigo(a) seu?')
             perg10 = input()
-            # Chamar o método inserir
+        # Chamar o método inserir
             operacoes.inserir2(perg6, perg7, perg8, perg9, perg10)
             operacoes.fim()
             break
-        elif this.opcao == 3:
-         operacoes.consultar1()
-         operacoes.fim()
-        elif this.opcao == 4:
-         operacoes.consultar2()
-         operacoes.fim()
         elif this.opcao == 5:
-         print("Por favor, informe o código do exercício que deseja excluir:")
-         this.codigo = int(input())
-         operacoes.excluir1(this.codigo)
-         operacoes.fim()
+            operacoes.consultar2()
+            operacoes.fim()
         elif this.opcao == 6:
             print("Por favor, informe o código do exercício que deseja excluir:")
             this.codigo = int(input())
             operacoes.excluir2(this.codigo)
             operacoes.fim()
         elif this.opcao == 0:
-            print('Tchau! volte sempre que precisar conversar, você com você mesmo.\033[1;31m♡\033[0;0m \n.')
+             print('Tchau! volte sempre que precisar conversar, você com você mesmo.\033[1;31m♡\033[0;0m \n.')
         else:
-         print('Desculpe, mas a opção escolhida não é válida! Tente novamente.')
+             print('Desculpe, mas a opção escolhida não é válida! Tente novamente.')
+
 
 
 
