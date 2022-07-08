@@ -5,14 +5,15 @@ this.codigo = 0
 this.campo = ""
 
 def menu():
-    print('\nEscolha uma das opções abaixo: \n\n'                       +
-          '1. Exercìcio para Insegurança.\n'                            +
-          '2. Exercìcio para Rotulação.\n'                              +
-          '3. Consulte suas respostas - Insegurança.\n'+
-          '4. Consulte suas respostas - Rotulação.\n'  +
-          '5. Excluir exercicio - insegurança.\n' +
-          '6. Excluir exercicio - Rotulação.\n'   +
-          '0. Sair\n')
+    print('\nOlá, bem vindo(a) ao Me With Me!\033[1;31m♡\033[0;0m\n'  +
+          '\nPor favor, escolha uma das opções abaixo: \n\n'            +
+          '\033[1;31m▹\033[0;0m1. Exercìcio para Insegurança.\n'                            +
+          '\033[1;31m▹\033[0;0m2. Exercìcio para Rotulação.\n'                              +
+          '\033[1;31m▹\033[0;0m3. Consulte suas respostas - Insegurança.\n'                 +
+          '\033[1;31m▹\033[0;0m4. Consulte suas respostas - Rotulação.\n'                   +
+          '\033[1;31m▹\033[0;0m5. Excluir exercicio - insegurança.\n'                       +
+          '\033[1;31m▹\033[0;0m6. Excluir exercicio - Rotulação.\n'                         +
+          '\033[1;31m▹\033[0;0m0. Sair\n')
     this.opcao = int(input())
 def operacao():
     while (this.opcao != 0):
@@ -46,6 +47,7 @@ def operacao():
             perg5 = input()
             # Chamar o método inserir
             operacoes.inserir1(perg1, perg2, perg3, perg4, perg5)
+            operacoes.fim()
         elif this.opcao == 2:
             print('\nOlá, bem vindo(a)! \n\n' +
                   'Você fará agora um exercício para te ajudar a duvidar dos seus pensamentos ruins.\n' +
@@ -76,28 +78,28 @@ def operacao():
             perg10 = input()
             # Chamar o método inserir
             operacoes.inserir2(perg6, perg7, perg8, perg9, perg10)
-
-
+            operacoes.fim()
+            break
         elif this.opcao == 3:
-          operacoes.consultar1()
+         operacoes.consultar1()
+         operacoes.fim()
         elif this.opcao == 4:
-            operacoes.consultar2()
-
+         operacoes.consultar2()
+         operacoes.fim()
         elif this.opcao == 5:
-         print("Informe o código para a exclusão do dado")
+         print("Por favor, informe o código do exercício que deseja excluir:")
          this.codigo = int(input())
          operacoes.excluir1(this.codigo)
-
+         operacoes.fim()
         elif this.opcao == 6:
-            print("Informe o código para a exclusão do dado")
+            print("Por favor, informe o código do exercício que deseja excluir:")
             this.codigo = int(input())
             operacoes.excluir2(this.codigo)
-
+            operacoes.fim()
         elif this.opcao == 0:
-            print('Tchau! volte sempre que precisar conversar, você com você mesmo.\033[1;31m♡\033[0;0m \n. ')
-
-    else:
-       print('Opção escolhida não é válida!')
+            print('Tchau! volte sempre que precisar conversar, você com você mesmo.\033[1;31m♡\033[0;0m \n.')
+        else:
+         print('Desculpe, mas a opção escolhida não é válida! Tente novamente.')
 
 
 

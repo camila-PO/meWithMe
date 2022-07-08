@@ -1,5 +1,7 @@
 import mysql.connector
 import conexaoBD #Classe que faz a conexão com o banco de dados
+import menu
+import this
 
 db_connection = conexaoBD.conectar()
 con = db_connection.cursor()
@@ -44,7 +46,7 @@ def excluir1(cod):
         sql = "delete from inseguranca where codInsegura = '{}'".format(cod)
         con.execute(sql)
         db_connection.commit()
-        print('{} Excluido!'.format(con.rowcount))
+        print('Exercício de código número {} foi excluido! \033[1;31m♡\033[0;0m '.format(con.rowcount))
     except Exception as erro:
         print(erro)
 
@@ -82,6 +84,19 @@ def excluir2(cod):
         sql = "delete from rotulacao where codRotu = '{}'".format(cod)
         con.execute(sql)
         db_connection.commit()
-        print('{} Excluido!'.format(con.rowcount))
+        print('Exercício de código número {} foi excluido! \033[1;31m♡\033[0;0m '.format(con.rowcount))
     except Exception as erro:
         print(erro)
+
+def fim():
+        print('\033[1;31m▹\033[0;0m1. Voltar ao menu?\n' + '\033[1;31m▹\033[0;0m0. Sair\n')
+        abc = int(input())
+        if abc == 1:
+            menu.operacao()
+        elif abc == 0:
+            print('Tchau! volte sempre que precisar conversar, você com você mesmo.\033[1;31m♡\033[0;0m \n. ')
+        else:
+            while abc < 0 or abc > 1:
+                print('Desculpe, mas a opção escolhida não é válida! Tente novamente.')
+                fim()
+
